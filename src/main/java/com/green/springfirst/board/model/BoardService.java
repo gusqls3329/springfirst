@@ -1,10 +1,6 @@
-package com.green.springfirst.board;
+package com.green.springfirst.board.model;
 
-import com.green.springfirst.board.model.BoardDetailVo;
-import com.green.springfirst.board.model.BoardVo;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,6 +20,11 @@ public class BoardService {
     BoardDetailVo selBoardById(int iboard){
         return mapper.selBoardById(iboard);
     }
+    int postBoard(BoardInsDto dto){
+        return mapper.insBoard(dto);
+    }
+    int putBoard(BoardUpdDto dto){return mapper.updBoard(dto);}
+    int delBoard(int iboard){return mapper.delBoard(iboard);}
 }
 
 /*

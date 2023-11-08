@@ -2,7 +2,13 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.green.springfirst.board.BoardMapper">
+<mapper namespace="com.green.springfirst.board.model.BoardMapper">
+    <insert id="insBoard">
+        INSERT INTO board
+        SET title = #{title}
+        ,ctnts = #{ctnts}
+        , writer = #{writer}
+    </insert>
     <select id="selBoardList">
         SELECT iboard, title, writer, created_at as createdAt
         From board
@@ -12,4 +18,15 @@
     From board
     Where iboard = #{iboard} <!-- #을 붙이면 값에 맞는 타입을 알아서 지정해줌-->
     </select>
+    <update id="updBoard">
+        UPDATE board
+        SET title= #{title},
+        ctnts= #{ctnts},
+        writer= #{writer}
+        Where iboard = #{iboard}
+    </update>
+    <delete id="delBoard">
+    DELETE FROM board
+    WHERE iboard = #{iboard}
+    </delete>
 </mapper>

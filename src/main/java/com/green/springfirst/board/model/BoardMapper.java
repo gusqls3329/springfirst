@@ -1,6 +1,7 @@
-package com.green.springfirst.board;
+package com.green.springfirst.board.model;
 
 import com.green.springfirst.board.model.BoardDetailVo;
+import com.green.springfirst.board.model.BoardInsDto;
 import com.green.springfirst.board.model.BoardVo;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,6 +11,10 @@ selBoardList와 </>BoardMapper의id는 같아야한다
  */
 @Mapper // 빈등록
 public interface BoardMapper {
+    int insBoard(BoardInsDto dto);
     List<BoardVo> selBoardList();
     BoardDetailVo selBoardById(int iboard);
+    int updBoard(BoardUpdDto dto);
+    int delBoard(int iboard);
+
 }
