@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-//@Controller : 디폴트 응답값이 hml : 요청받고 응답받는것.hml주는것이 목적
+//@Controller : 디폴트 응답값이 hml : 요청받고 응답받는것. hml주는것이 목적
 @RestController //빈등록 + 컨트롤러 :Rest 디폴트가 응답이 제이슨
 @RequiredArgsConstructor  // BoardService의 객체주소값이 아래의 service에 들어감,유일해야함(선택해야하는것은 사용하지 못함)
 public class BoardController {
