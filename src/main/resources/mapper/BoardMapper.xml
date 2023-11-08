@@ -7,11 +7,9 @@
         SELECT iboard, title, writer, created_at as createdAt
         From board
     </select>
-
     <select id="selBoardById">
     SELECT iboard, title,ctnts, writer, created_at as createdAt
     From board
     Where iboard = #{iboard} <!-- #을 붙이면 값에 맞는 타입을 알아서 지정해줌-->
-
     </select>
 </mapper>
