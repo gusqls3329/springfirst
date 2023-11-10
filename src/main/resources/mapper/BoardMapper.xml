@@ -5,12 +5,12 @@
 <mapper namespace="com.green.springfirst.board.model.BoardMapper">
     <insert id="insBoard">
         INSERT INTO board
-        SET title = #{title}
+        SET title = #{title}  <!--컬럼명 = #{멤버필드명} -->
         ,ctnts = #{ctnts}
         , writer = #{writer}
     </insert>
     <select id="selBoardList">
-        SELECT iboard, title, writer, created_at as createdAt
+        SELECT iboard, title, writer, ctnts, created_at as createdAt
         From board
     </select>
     <select id="selBoardById">
